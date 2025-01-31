@@ -1,0 +1,99 @@
+<div class="row">
+    <div [ngClass]="showSideBar ? 'col-8' : 'col-12'" class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        Lista de Servicos
+                    </div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-success" (click)="openSideBar()">Novo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3" *ngFor="let product of productsList">
+                        <div class="card">
+                            <img class="card-img-top" [src]="product.image_url" alt="Card image">
+                            <div class="card-body">
+                              <h4 class="card-title">{{product.nm_produto}}</h4>
+                              <a class="btn btn-primary" (click)="onEdit(product)">Editar</a>
+                              <a href="#" class="btn btn-danger mx-2">Delete</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4" *ngIf="showSideBar">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        Novo Serviço
+                    </div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-danger" (click)="closeSideBar()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Nome do Serviço</label>
+                        <input type="text" [(ngModel)]="productObj.nm_produto" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Descrição do Serviço</label>
+                        <textarea rows="4" class="form-control" [(ngModel)]="productObj.ds_produto"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Quantidade de Unidades</label>
+                        <input type="text" [(ngModel)]="productObj.qtd_unidade" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Valor do Serviço</label>
+                        <input type="text" [(ngModel)]="productObj.valor_produto" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Numero do Lote</label>
+                        <input type="text" [(ngModel)]="productObj.nr_lote" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Data de Validade</label>
+                        <input type="text" [(ngModel)]="productObj.dt_validate" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Categoria</label>
+                        <select [(ngModel)]="productObj.id_categoria" class="form-select">
+                            <option *ngFor="let cate of categoryList" [value]="cate.categoryId"> {{cate.categoryName}}</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Imagem</label>
+                        <input type="text" [(ngModel)]="productObj.image_url" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-danger">Reset</button>
+                        </div>
+                        <div class="col-6">
+                            <!-- <button class="btn btn-success" *ngIf="prodi" (click)="onSave()">Create</button> -->
+                            <button class="btn btn-success" (click)="onSave()">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

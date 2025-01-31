@@ -1,0 +1,85 @@
+{
+    "categories": [
+        {
+            "categoryId": 1,
+            "categoryName": "Descongestionar",
+            "parentCategoryId": 0
+        },
+        {
+            "categoryId": 2,
+            "categoryName": "Anti-Inflamatorio",
+            "parentCategoryId": 0
+        },
+        {
+            "categoryId": 3,
+            "categoryName": "Nasal",
+            "parentCategoryId": 0
+        }
+    ],
+    "prestador_servico": [
+        {
+            "id_prestador_servico": 1,
+            "ds_especialidade": "Descongestionar",
+            "cnpj": 0,
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-27",
+            "dt_desativacao": null
+        }
+    ],
+    "tipo_servico": [
+        {
+            "id_tipo_servico": 1,
+            "ds_servico": "Descongestionar",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-27",
+            "dt_desativacao": null
+        }
+    ],
+    "products": [
+        {
+            "id_produto": 1,
+            "nm_produto": "Decongex",
+            "ds_produto": "Decongex",
+            "qtd_unidade": 1,
+            "qtd_estoque": 5,
+            "valor_produto": 5.00,
+            "nr_lote": 1,
+            "dt_validate": "2025-01-25",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-25",
+            "dt_desativacao": "2025-01-25",
+            "id_categoria": 1,
+            "image_url": "https://drogariasp.vteximg.com.br/arquivos/ids/1160009-1000-1000/80683---decongex-plus-ache-revestido-12-comprimidos_0000_Layer-1.png?v=638629698889300000"
+        },
+        {
+            "id_produto": 2,
+            "nm_produto": "Avamys",
+            "ds_produto": "Avamis",
+            "qtd_unidade": 1,
+            "qtd_estoque": 5,
+            "valor_produto": 6.00,
+            "nr_lote": 1,
+            "dt_validate": "2025-01-25",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-25",
+            "dt_desativacao": "2025-01-25",
+            "id_categoria": 2,
+            "image_url": "https://vipfarma.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/a/5aacb67a-aed9-4225-99bb-2bf45ecb38eb.jpeg"
+        },
+        {
+            "id_produto": 3,
+            "nm_produto": "DorFlex",
+            "ds_produto": "DorFlex",
+            "qtd_unidade": 1,
+            "qtd_estoque": 5,
+            "valor_produto": 7.00,
+            "nr_lote": 1,
+            "dt_validate": "2025-01-25",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-25",
+            "dt_desativacao": "2025-01-25",
+            "id_categoria": 3,
+            "image_url": "https://dmvfarma.vtexassets.com/arquivos/ids/259618/7891058017392.1.png?v=638645417605200000"
+        }
+    ]
+}
