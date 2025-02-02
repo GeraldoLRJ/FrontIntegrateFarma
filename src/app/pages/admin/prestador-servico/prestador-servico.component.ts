@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TipoServicoService } from '../../../services/tipo-servico/tipo-servico.service';
+import { PrestadorServicoService } from '../../../services/prestador-servico/prestador-servico.service';
 
 @Component({
-  selector: 'app-tipo-servico',
+  selector: 'app-prestador-servico',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './tipo-servico.component.html',
-  styleUrl: './tipo-servico.component.css'
+  templateUrl: './prestador-servico.component.html',
+  styleUrl: './prestador-servico.component.css'
 })
-export class TipoServicoComponent {
+export class PrestadorServicoComponent {
   showSideBar: boolean = false;
-
-  tipoServicoObj: any = {
+  
+  prestadorServicoObj: any = {
     "id_tipo_servico": 1,
     "ds_servico": "",
     "dt_cadastro": "2025-01-25",
@@ -21,9 +21,9 @@ export class TipoServicoComponent {
     "dt_desativacao": null
   }
 
-  tipoServicoList: any [] = [];
+  prestadorServicoList: any [] = [];
 
-  constructor(private tipoServicoSrv: TipoServicoService) {
+  constructor(private prestadorServicoSrv: PrestadorServicoService) {
     
   }
 
@@ -32,15 +32,15 @@ export class TipoServicoComponent {
   }
 
   getTipoServico() {
-    this.tipoServicoSrv.getTipoServico().subscribe((res:any)=>{
-      this.tipoServicoList = res;
+    this.prestadorServicoSrv.getPrestadorServico().subscribe((res:any)=>{
+      this.prestadorServicoList = res;
     })
   }
 
   onSave() {
-    this.tipoServicoSrv.saveTipoServico(this.tipoServicoObj).subscribe((res:any)=>{
+    this.prestadorServicoSrv.savePrestadorServico(this.prestadorServicoObj).subscribe((res:any)=>{
       if(res.resul) {
-        alert("Produto Cadastrado!");
+        alert("Prestador de Serviço Cadastrado!");
         this.getTipoServico();
       } else {
         alert(res.message);
@@ -49,7 +49,7 @@ export class TipoServicoComponent {
   }
 
   onEdit(item: any) {
-    this.tipoServicoObj = item;
+    this.prestadorServicoObj = item;
     this.openSideBar();
   }
 

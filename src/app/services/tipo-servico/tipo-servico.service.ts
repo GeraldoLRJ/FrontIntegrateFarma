@@ -13,7 +13,7 @@ export class TipoServicoService {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_TIPO_SERVICO)
   }
   
-  saveProduct(obj: any) {
+  saveTipoServico(obj: any) {
     return this.http.post(Constant.API_END_POINT + Constant.METHODS.CREATE_TIPO_SERVICO, obj)
   }
 }

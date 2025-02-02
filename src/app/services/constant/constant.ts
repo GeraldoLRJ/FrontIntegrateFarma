@@ -4,6 +4,7 @@ export const Constant = {
         GET_ALL_CATEGORYS: 'categories',
         GET_ALL_PRODUCTS: 'products',
         GET_ALL_TIPO_SERVICO: 'tipo_servico',
+        GET_ALL_PRESTADOR_SERVICO: 'prestador_servico',
         CREATE_PRODUCT: 'CreateProduct',
         CREATE_TIPO_SERVICO: 'CreateTipoServico'
     }

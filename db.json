@@ -1,29 +1,41 @@
 {
-    "categories": [
+    "usuario": [
         {
-            "categoryId": 1,
-            "categoryName": "Descongestionar",
-            "parentCategoryId": 0
-        },
-        {
-            "categoryId": 2,
-            "categoryName": "Anti-Inflamatorio",
-            "parentCategoryId": 0
-        },
-        {
-            "categoryId": 3,
-            "categoryName": "Nasal",
-            "parentCategoryId": 0
+            "id_usuario": 1,
+            "cpf": "10000136589",
+            "email": "geraldo@integratefarma.com.br",
+            "nome": "Geraldo",
+            "senha": "3d6efc10eb00b703ff6ae4e40c3b80580cb30f98",
+            "dt_cadastro": "2025-01-27",
+            "dt_modificacao": "2025-01-28",
+            "dt_desativacao": null
         }
     ],
     "prestador_servico": [
         {
             "id_prestador_servico": 1,
             "ds_especialidade": "Descongestionar",
-            "cnpj": 0,
+            "cnpj": "10000136589",
             "dt_cadastro": "2025-01-25",
             "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null
+            "dt_desativacao": null,
+            "usuario": {
+                "id_usuario": 1,
+                "cpf": "10000136589",
+                "email": "geraldo@integratefarma.com.br",
+                "nome": "Geraldo",
+                "senha": "3d6efc10eb00b703ff6ae4e40c3b80580cb30f98",
+                "dt_cadastro": "2025-01-27",
+                "dt_modificacao": "2025-01-28",
+                "dt_desativacao": null
+            },
+            "tipo_servico": {
+                "id_tipo_servico": 2,
+                "ds_servico": "Consulta Checkup",
+                "dt_cadastro": "2025-01-25",
+                "dt_modificacao": "2025-01-27",
+                "dt_desativacao": null
+            }
         }
     ],
     "tipo_servico": [
