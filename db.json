@@ -29,7 +29,28 @@
     "tipo_servico": [
         {
             "id_tipo_servico": 1,
-            "ds_servico": "Descongestionar",
+            "ds_servico": "Vacinação",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-27",
+            "dt_desativacao": null
+        },
+        {
+            "id_tipo_servico": 2,
+            "ds_servico": "Consulta Checkup",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-27",
+            "dt_desativacao": null
+        },
+        {
+            "id_tipo_servico": 3,
+            "ds_servico": "Consulta Nutrição",
+            "dt_cadastro": "2025-01-25",
+            "dt_modificacao": "2025-01-27",
+            "dt_desativacao": null
+        },
+        {
+            "id_tipo_servico": 4,
+            "ds_servico": "Amostras de Produtos",
             "dt_cadastro": "2025-01-25",
             "dt_modificacao": "2025-01-27",
             "dt_desativacao": null
