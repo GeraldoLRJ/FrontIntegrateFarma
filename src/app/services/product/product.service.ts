@@ -17,7 +17,7 @@ export class ProductService {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_CATEGORYS)
   }
 
-  saveProduct(obj: any) {
-    return this.http.post(Constant.API_END_POINT + Constant.METHODS.CREATE_PRODUCT, obj)
+  addCart(obj: any) {
+    return this.http.post(Constant.API_END_POINT + Constant.METHODS.ADD_CART, obj)
   }
 }

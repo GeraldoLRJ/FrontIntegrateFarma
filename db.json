@@ -11,6 +11,25 @@
             "dt_desativacao": null
         }
     ],
+    "cliente": [
+        {
+            "id_cliente": 1,
+            "qnt_compras": 0,
+            "dt_cadastro": "2025-01-27",
+            "dt_modificacao": "2025-01-28",
+            "dt_desativacao": null,
+            "usuario": {
+                "id_usuario": 1,
+                "cpf": "10000136589",
+                "email": "geraldo@integratefarma.com.br",
+                "nome": "Geraldo",
+                "senha": "3d6efc10eb00b703ff6ae4e40c3b80580cb30f98",
+                "dt_cadastro": "2025-01-27",
+                "dt_modificacao": "2025-01-28",
+                "dt_desativacao": null
+            }
+        }
+    ],
     "prestador_servico": [
         {
             "id_prestador_servico": 1,
@@ -38,36 +57,29 @@
             }
         }
     ],
-    "tipo_servico": [
-        {
-            "id_tipo_servico": 1,
-            "ds_servico": "Vacinação",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null
-        },
-        {
-            "id_tipo_servico": 2,
-            "ds_servico": "Consulta Checkup",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null
-        },
-        {
-            "id_tipo_servico": 3,
-            "ds_servico": "Consulta Nutrição",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null
-        },
-        {
-            "id_tipo_servico": 4,
-            "ds_servico": "Amostras de Produtos",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null
-        }
-    ],
+    "especialidade": {
+        "totalElementos": 0,
+        "quantidadePaginas": 0,
+        "pagina": 0,
+        "tamanho": 0,
+        "elementos": [
+            {
+                "valor": 500,
+                "nomeEspecialidade": "Cardiologista",
+                "idEspecialidade": 1
+            },
+            {
+                "valor": 100,
+                "nomeEspecialidade": "Odontologista",
+                "idEspecialidade": 2
+            },
+            {
+                "valor": 300,
+                "nomeEspecialidade": "Nutricionista",
+                "idEspecialidade": 3
+            }
+        ]
+    },
     "products": [
         {
             "id_produto": 1,
@@ -83,36 +95,6 @@
             "dt_desativacao": "2025-01-25",
             "id_categoria": 1,
             "image_url": "https://drogariasp.vteximg.com.br/arquivos/ids/1160009-1000-1000/80683---decongex-plus-ache-revestido-12-comprimidos_0000_Layer-1.png?v=638629698889300000"
-        },
-        {
-            "id_produto": 2,
-            "nm_produto": "Avamys",
-            "ds_produto": "Avamis",
-            "qtd_unidade": 1,
-            "qtd_estoque": 5,
-            "valor_produto": 6.00,
-            "nr_lote": 1,
-            "dt_validate": "2025-01-25",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-25",
-            "dt_desativacao": "2025-01-25",
-            "id_categoria": 2,
-            "image_url": "https://vipfarma.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/a/5aacb67a-aed9-4225-99bb-2bf45ecb38eb.jpeg"
-        },
-        {
-            "id_produto": 3,
-            "nm_produto": "DorFlex",
-            "ds_produto": "DorFlex",
-            "qtd_unidade": 1,
-            "qtd_estoque": 5,
-            "valor_produto": 7.00,
-            "nr_lote": 1,
-            "dt_validate": "2025-01-25",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-25",
-            "dt_desativacao": "2025-01-25",
-            "id_categoria": 3,
-            "image_url": "https://dmvfarma.vtexassets.com/arquivos/ids/259618/7891058017392.1.png?v=638645417605200000"
         }
     ]
 }

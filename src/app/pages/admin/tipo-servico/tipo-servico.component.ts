@@ -14,12 +14,11 @@ export class TipoServicoComponent {
   showSideBar: boolean = false;
 
   tipoServicoObj: any = {
-    "id_tipo_servico": 1,
-    "ds_servico": "",
-    "dt_cadastro": "2025-01-25",
-    "dt_modificacao": "2025-01-27",
-    "dt_desativacao": null
+    "nomeEspecialidade": "",
+    "valor": 0
   }
+
+  titleSideBar = "";
 
   tipoServicoList: any [] = [];
 
@@ -31,9 +30,15 @@ export class TipoServicoComponent {
     this.getTipoServico();
   }
 
+  //getTipoServico() {
+  //  this.tipoServicoSrv.getTipoServico(1, 5).subscribe((res:any)=>{
+  //    this.tipoServicoList = res;
+  //  })
+  //}
+
   getTipoServico() {
     this.tipoServicoSrv.getTipoServico().subscribe((res:any)=>{
-      this.tipoServicoList = res;
+      this.tipoServicoList = res.elementos;
     })
   }
 
@@ -50,6 +55,12 @@ export class TipoServicoComponent {
 
   onEdit(item: any) {
     this.tipoServicoObj = item;
+    this.titleSideBar = "Editando "+item.nomeEspecialidade;
+    this.openSideBar();
+  }
+
+  onCreate() {
+    this.titleSideBar = "Criando Novo Serviço";
     this.openSideBar();
   }
 

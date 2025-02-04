@@ -4,7 +4,7 @@
             <div class="card-header bg-primary text-white">
                 <div class="row">
                     <div class="col-6">
-                        Lista de Prestadores de Serviços
+                        Lista de Atendimentos
                     </div>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-body">
                               <h4 class="card-title">{{prestadorServico.usuario.nome}}</h4>
-                                <a class="btn btn-primary" (click)="addCart(prestadorServico)">Editar</a>
+                                <a class="btn btn-primary" (click)="postAtendimento(prestadorServico)">Editar</a>
                                 <a class="btn btn-danger mx-2">Delete</a>
                             </div>
                           </div>

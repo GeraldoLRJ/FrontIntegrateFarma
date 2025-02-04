@@ -7,7 +7,7 @@
                         Lista de Serviços
                     </div>
                     <div class="col-6 text-end">
-                        <button class="btn btn-sm btn-success" (click)="openSideBar()">Novo</button>
+                        <button class="btn btn-sm btn-success" (click)="onCreate()">Novo</button>
                     </div>
                 </div>
             </div>
@@ -16,9 +16,9 @@
                     <div class="col-3" *ngFor="let tipoServico of tipoServicoList">
                         <div class="card">
                             <div class="card-body">
-                              <h4 class="card-title">{{tipoServico.ds_servico}}</h4>
+                              <h4 class="card-title">{{tipoServico.nomeEspecialidade}}</h4>
                                 <a class="btn btn-primary" (click)="onEdit(tipoServico)">Editar</a>
-                                <a class="btn btn-danger mx-2">Delete</a>
+                                <a class="btn btn-danger mx-2">Apagar</a>
                             </div>
                           </div>
                     </div>
@@ -31,7 +31,7 @@
             <div class="card-header bg-primary text-white">
                 <div class="row">
                     <div class="col-6">
-                        Novo Serviço
+                        {{this.titleSideBar}}
                     </div>
                     <div class="col-6 text-end">
                         <button class="btn btn-sm btn-danger" (click)="closeSideBar()">Fechar</button>
@@ -40,19 +40,20 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-6">
                         <label for="">Nome do Serviço</label>
-                        <input type="text" [(ngModel)]="tipoServicoObj.ds_servico" class="form-control">
+                        <input type="text" [(ngModel)]="tipoServicoObj.nomeEspecialidade" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Valor do Serviço</label>
+                        <input type="number" [(ngModel)]="tipoServicoObj.valor" class="form-control">
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-6">
-                            <button class="btn btn-danger">Reset</button>
-                        </div>
-                        <div class="col-6">
                             <!-- <button class="btn btn-success" *ngIf="prodi" (click)="onSave()">Create</button> -->
-                            <button class="btn btn-success" (click)="onSave()">Create</button>
+                            <button class="btn btn-success" (click)="onSave()">Salvar</button>
                         </div>
                     </div>
                 </div>
