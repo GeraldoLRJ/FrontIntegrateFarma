@@ -1,0 +1,87 @@
+.cart-container {
+    display: grid;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.cart-header, .cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 colunas: descrição, preço, quantidade, ações */
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-header {
+    font-weight: bold;
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.cart-item {
+    background: white;
+    border-radius: 4px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    border: none;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.quantity-controls button:hover {
+    background: #218838;
+}
+
+.remove-btn {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+.cart-footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-footer h4 {
+    margin: 0;
+}
+
+.cart-footer button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-footer button:hover {
+    background: #218838;
+}

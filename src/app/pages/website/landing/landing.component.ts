@@ -42,7 +42,7 @@ export class LandingComponent implements OnInit {
         this.cartList.push({ ...item, quantidade: 1 });
     }
 
-    if(this.cartList.length == 0) {
+    if(this.cartList.length > 0) {
       this.openCartBar();
     }
   }
@@ -50,5 +50,33 @@ export class LandingComponent implements OnInit {
   openCartBar() {
     this.titleSideBar = 'Carrinho de Compras';
     this.carrinho = true;
+  }
+
+  increaseQuantity(item: any) {
+    item.quantidade++;
+  }
+
+  decreaseQuantity(item: any) {
+    if (item.quantidade > 1) {
+        item.quantidade--;
+    } else {
+        this.removeFromCart(item); // Remove o item se a quantidade for 0
+    }
+  }
+
+  removeFromCart(item: any) {
+    this.cartList = this.cartList.filter(cartItem => cartItem.id !== item.id);
+
+    if(this.cartList.length == 0) {
+      this.carrinho = false;
+    }
+  }
+
+  getTotalCompra(): number {
+    return this.cartList.reduce((total, item) => total + (item.preco * item.quantidade), 0);
+  }
+
+  finalizaCompra(item: any) {
+
   }
 }

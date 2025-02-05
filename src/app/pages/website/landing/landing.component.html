@@ -13,14 +13,57 @@
                     <div class="col-3" *ngFor="let product of productList">
                         <div class="card">
                             <div class="card-body">
-                              <h4 class="card-title">{{product.descricao}}</h4>
+                                <img class="card-img-top" [src]="product.linkImagem" alt="Card image">
+                                <h4 class="card-title">{{product.descricao}}</h4>
+                                <h5 class="card-title">R$ {{product.preco}}</h5>
                                 <a class="btn btn-success" (click)="addCart(product)">+ Carrinho</a>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <div class="col-4" *ngIf="carrinho">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        {{this.titleSideBar}}
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Lista de itens no carrinho -->
+                <div *ngIf="cartList.length > 0">
+                    <h3>Carrinho</h3>
+                    <div class="cart-container">
+                        <div class="cart-header">
+                            <span>Descrição</span>
+                            <span>Preço</span>
+                            <span>Quantidade</span>
+                            <span>Ações</span>
+                        </div>
+                        <div *ngFor="let item of cartList" class="cart-item">
+                            <span>{{ item.descricao }}</span>
+                            <span>R$ {{ item.preco }}</span>
+                            <div class="quantity-controls">
+                                <button (click)="decreaseQuantity(item)">➖</button>
+                                <span> {{ item.quantidade }} </span>
+                                <button (click)="increaseQuantity(item)">➕</button>
+                            </div>
+                            <button class="remove-btn" (click)="removeFromCart(item)">❌ Remover</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-footer">
+                    <h4>Total: R$ {{ getTotalCompra() }}</h4>
+                    <button class="btn btn-success btn-lg" (click)="finalizaCompra(cartList
+
+                    )">Ir para Pagamento</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 </div>
