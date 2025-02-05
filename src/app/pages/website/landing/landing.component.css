@@ -85,3 +85,40 @@
 .cart-footer button:hover {
     background: #218838;
 }
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaço entre os produtos */
+}
+
+.product-card {
+    flex: 1 1 calc(25% - 10px); /* Cada produto ocupará 25% do espaço disponível */
+    min-width: 200px; /* Tamanho mínimo para evitar que fiquem pequenos demais */
+    max-width: 250px; /* Limite de tamanho para evitar que fiquem grandes */
+}
+
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .product-card {
+        flex: 1 1 calc(33.333% - 10px); /* Em telas menores, cada item ocupará 1/3 do espaço */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 calc(50% - 10px); /* Em telas pequenas, cada item ocupa metade do espaço */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card {
+        flex: 1 1 100%; /* Em telas muito pequenas, cada item ocupa 100% do espaço */
+    }
+}

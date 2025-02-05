@@ -9,19 +9,19 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-3" *ngFor="let product of productList">
+                <div class="d-flex flex-wrap justify-content-start">
+                    <div class="product-card" *ngFor="let product of productList">
                         <div class="card">
                             <div class="card-body">
-                                <img class="card-img-top" [src]="product.linkImagem" alt="Card image">
-                                <h4 class="card-title">{{product.descricao}}</h4>
-                                <h5 class="card-title">R$ {{product.preco}}</h5>
+                                <img class="card-img-top product-image" [src]="product.linkImagem" alt="Card image">
+                                <h4 class="card-title">{{ product.descricao }}</h4>
+                                <h5 class="card-title">R$ {{ product.preco }}</h5>
                                 <a class="btn btn-success" (click)="addCart(product)">+ Carrinho</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
     </div>
     <div class="col-4" *ngIf="carrinho">
