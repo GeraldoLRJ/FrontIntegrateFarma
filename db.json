@@ -137,6 +137,34 @@
             "preco": 5,
             "linkImagem": "https://promofarma.vtexassets.com/arquivos/ids/170419/1035047_dipirona-sodica-500mg-10-comprimidos_m1_637660984990478628.jpg?v=638080158434800000",
             "quantidadeEstoque": 100
+          },
+          {
+            "id": 4,
+            "descricao": "Dorflex",
+            "preco": 10,
+            "linkImagem": "https://dmvfarma.vtexassets.com/arquivos/ids/259661-800-auto?v=638645428987570000&width=800&height=auto&aspect=true",
+            "quantidadeEstoque": 54
+          },
+          {
+            "id": 5,
+            "descricao": "Dipirona",
+            "preco": 5,
+            "linkImagem": "https://promofarma.vtexassets.com/arquivos/ids/170419/1035047_dipirona-sodica-500mg-10-comprimidos_m1_637660984990478628.jpg?v=638080158434800000",
+            "quantidadeEstoque": 100
+          },
+          {
+            "id": 6,
+            "descricao": "Dorflex",
+            "preco": 10,
+            "linkImagem": "https://dmvfarma.vtexassets.com/arquivos/ids/259661-800-auto?v=638645428987570000&width=800&height=auto&aspect=true",
+            "quantidadeEstoque": 54
+          },
+          {
+            "id": 7,
+            "descricao": "Dipirona",
+            "preco": 5,
+            "linkImagem": "https://promofarma.vtexassets.com/arquivos/ids/170419/1035047_dipirona-sodica-500mg-10-comprimidos_m1_637660984990478628.jpg?v=638080158434800000",
+            "quantidadeEstoque": 100
           }
         ]
       }

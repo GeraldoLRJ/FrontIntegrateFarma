@@ -58,12 +58,39 @@
                 </div>
                 <div class="cart-footer">
                     <h4>Total: R$ {{ getTotalCompra() }}</h4>
-                    <button class="btn btn-success btn-lg" (click)="finalizaCompra(cartList
-
-                    )">Ir para Pagamento</button>
+                    <button class="btn btn-success btn-lg" (click)="finalizaCompra()">Ir para Pagamento</button>
                 </div>
             </div>
-            
+            <div class="card-body" *ngIf="finalizarCompra">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="parcelas">Parcelas</label>
+                        <input type="number" id="parcelas" [(ngModel)]="compra.parcelas" class="form-control" 
+                               min="1" max="12" (change)="validateParcelas()">
+                    </div>                    
+                    <div class="col-6">
+                        <label for="">Forma de Pagamento</label>
+                        <select id="formasPagamento" class="form-control" [(ngModel)]="compra.forma_pagamento" (change)="updateFormasPagamento()">
+                            <option *ngFor="let item of formasPagamento" [value]="item.prefixo">
+                                {{ item.nome }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div flex>
+                        <label for="observacao">Observação</label>
+                        <textarea id="observacao" [(ngModel)]="compra.observacao" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-success" (click)="finalizar()">Finalizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
