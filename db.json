@@ -111,21 +111,33 @@
             }
         ]
     },
-    "products": [
-        {
-            "id_produto": 1,
-            "nm_produto": "Decongex",
-            "ds_produto": "Decongex",
-            "qtd_unidade": 1,
-            "qtd_estoque": 5,
-            "valor_produto": 5.00,
-            "nr_lote": 1,
-            "dt_validate": "2025-01-25",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-25",
-            "dt_desativacao": "2025-01-25",
-            "id_categoria": 1,
-            "image_url": "https://drogariasp.vteximg.com.br/arquivos/ids/1160009-1000-1000/80683---decongex-plus-ache-revestido-12-comprimidos_0000_Layer-1.png?v=638629698889300000"
-        }
-    ]
+    "products": {
+        "totalElementos": 0,
+        "quantidadePaginas": 0,
+        "pagina": 0,
+        "tamanho": 0,
+        "elementos": [
+          {
+            "id": 1,
+            "descricao": "Decongex",
+            "preco": 20,
+            "linkImagem": "https://drogariasp.vteximg.com.br/arquivos/ids/1160010-1000-1000/80683---decongex-plus-ache-revestido-12-comprimidos_0001_0.png?v=638629699043570000",
+            "quantidadeEstoque": 33
+          },
+          {
+            "id": 2,
+            "descricao": "Dorflex",
+            "preco": 10,
+            "linkImagem": "https://dmvfarma.vtexassets.com/arquivos/ids/259661-800-auto?v=638645428987570000&width=800&height=auto&aspect=true",
+            "quantidadeEstoque": 54
+          },
+          {
+            "id": 3,
+            "descricao": "Dipirona",
+            "preco": 5,
+            "linkImagem": "https://promofarma.vtexassets.com/arquivos/ids/170419/1035047_dipirona-sodica-500mg-10-comprimidos_m1_637660984990478628.jpg?v=638080158434800000",
+            "quantidadeEstoque": 100
+          }
+        ]
+      }
 }

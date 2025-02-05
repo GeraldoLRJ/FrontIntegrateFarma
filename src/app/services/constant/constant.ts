@@ -6,6 +6,7 @@ export const Constant = {
         TIPO_SERVICO: 'especialidade',
         GET_ALL_PRESTADOR_SERVICO: 'paginado-prestador-servico',
         USUARIO_ADMIN: 'usuario-admin',
+        GET_PRODUCTS_PAGINATE: 'produto/paginado-produtos',
         PRESTADOR_SERVICO: 'prestador-servico',
         ADD_CART: 'add_cart',
         ATENDIMENTO: 'agendamento',

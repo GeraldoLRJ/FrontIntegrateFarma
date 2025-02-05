@@ -1,5 +1,5 @@
 <div class="row">
-    <div [ngClass]="showSideBar ? 'col-8' : 'col-12'" class="col-8">
+    <div [ngClass]="carrinho || finalizarCompra ? 'col-8' : 'col-12'" class="col-8">
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <div class="row">
@@ -10,12 +10,11 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-3" *ngFor="let prestadorServico of productList">
+                    <div class="col-3" *ngFor="let product of productList">
                         <div class="card">
                             <div class="card-body">
-                              <h4 class="card-title">{{prestadorServico.usuario.nome}}</h4>
-                                <a class="btn btn-primary" (click)="addCart(prestadorServico)">Editar</a>
-                                <a class="btn btn-danger mx-2">Delete</a>
+                              <h4 class="card-title">{{product.descricao}}</h4>
+                                <a class="btn btn-success" (click)="addCart(product)">+ Carrinho</a>
                             </div>
                           </div>
                     </div>
@@ -23,4 +22,5 @@
             </div>
         </div>
     </div>
+    
 </div>
