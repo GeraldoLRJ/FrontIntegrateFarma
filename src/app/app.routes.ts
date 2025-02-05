@@ -6,6 +6,8 @@ import { PrestadorServicoComponent } from './pages/admin/prestador-servico/prest
 import { LandingComponent } from './pages/website/landing/landing.component';
 import { LayoutWebSiteComponent } from './pages/website/layout-web-site/layout-web-site.component';
 import { AtendimentoWebSiteComponent } from './pages/website/atendimento-web-site/atendimento-web-site.component';
+import { AgendamentoComponent } from './pages/admin/agendamento/agendamento.component';
+import { AgendamentoWebSiteComponent } from './pages/website/agendamento-web-site/agendamento-web-site.component';
 
 export const routes: Routes = [
 
@@ -27,8 +29,8 @@ export const routes: Routes = [
                 component:LandingComponent
             },
             {
-                path:'atendimento',
-                component:AtendimentoWebSiteComponent
+                path:'agendamento',
+                component:AgendamentoWebSiteComponent
             },
         ]
     },
@@ -43,6 +45,10 @@ export const routes: Routes = [
             {
                 path:'prestador_servico',
                 component:PrestadorServicoComponent
+            },
+            {
+                path:'agendamento-adm',
+                component:AgendamentoComponent
             }
         ]
     }

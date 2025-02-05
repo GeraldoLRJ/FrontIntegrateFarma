@@ -1,15 +1,35 @@
 {
-    "usuario": [
+    "usuario-admin": [
         {
-            "id_usuario": 1,
-            "cpf": "10000136589",
-            "email": "geraldo@integratefarma.com.br",
-            "nome": "Geraldo",
-            "senha": "3d6efc10eb00b703ff6ae4e40c3b80580cb30f98",
-            "dt_cadastro": "2025-01-27",
-            "dt_modificacao": "2025-01-28",
-            "dt_desativacao": null
-        }
+            "idUsuario": 1,
+            "cpf": "12345678911",
+            "email": "fulano.silva@gmail.com",
+            "nome": "Fulano da Silva",
+            "cep": "12345678",
+            "numero": 44545454,
+            "contatos": "84261850",
+            "idCargo": 1
+          },
+          {
+            "idUsuario": 2,
+            "cpf": "12345678911",
+            "email": "ciclano.silva@gmail.com",
+            "nome": "Ciclano da Silva",
+            "cep": "12345678",
+            "numero": 44545454,
+            "contatos": "84261850",
+            "idCargo": 1
+          },
+          {
+            "idUsuario": 3,
+            "cpf": "12345678911",
+            "email": "beltrano.silva@gmail.com",
+            "nome": "Beltrano da Silva",
+            "cep": "12345678",
+            "numero": 44545454,
+            "contatos": "84261850",
+            "idCargo": 1
+          }
     ],
     "cliente": [
         {
@@ -30,33 +50,44 @@
             }
         }
     ],
-    "prestador_servico": [
-        {
-            "id_prestador_servico": 1,
-            "ds_especialidade": "Descongestionar",
-            "cnpj": "10000136589",
-            "dt_cadastro": "2025-01-25",
-            "dt_modificacao": "2025-01-27",
-            "dt_desativacao": null,
-            "usuario": {
-                "id_usuario": 1,
-                "cpf": "10000136589",
-                "email": "geraldo@integratefarma.com.br",
-                "nome": "Geraldo",
-                "senha": "3d6efc10eb00b703ff6ae4e40c3b80580cb30f98",
-                "dt_cadastro": "2025-01-27",
-                "dt_modificacao": "2025-01-28",
-                "dt_desativacao": null
-            },
-            "tipo_servico": {
-                "id_tipo_servico": 2,
-                "ds_servico": "Consulta Checkup",
-                "dt_cadastro": "2025-01-25",
-                "dt_modificacao": "2025-01-27",
-                "dt_desativacao": null
-            }
-        }
-    ],
+    "paginado-prestador-servico": {
+        "totalElementos": 0,
+        "quantidadePaginas": 0,
+        "pagina": 0,
+        "tamanho": 0,
+        "elementos": [
+          {
+            "idPrestadorServico": 1,
+            "crm": "3711",
+            "idEspecialidade": 1,
+            "idUsuario": 1,
+            "valor": 20,
+            "nomeEspecilidade": "Cardiologista",
+            "cpf": "10323546299",
+            "email": "prof@gmail.com",
+            "nome": "Armando Silva",
+            "nomeCargo": "Cariologista",
+            "contatos": "37995632634",
+            "cep": "35506213",
+            "numero": 37995632634
+          },
+          {
+            "idPrestadorServico": 2,
+            "crm": "2582",
+            "idEspecialidade": 2,
+            "idUsuario": 2,
+            "valor": 80,
+            "nomeEspecilidade": "Odontologista",
+            "cpf": "10323546899",
+            "email": "clara@gmail.com",
+            "nome": "Clara Lacerda",
+            "nomeCargo": "Odontologista",
+            "contatos": "37995636148",
+            "cep": "35506213",
+            "numero": 37995636148
+          }
+        ]
+      },
     "especialidade": {
         "totalElementos": 0,
         "quantidadePaginas": 0,

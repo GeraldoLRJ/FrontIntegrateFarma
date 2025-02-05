@@ -17,8 +17,8 @@
                         <div class="card">
                             <div class="card-body">
                               <h4 class="card-title">{{tipoServico.nomeEspecialidade}}</h4>
-                                <a class="btn btn-primary" (click)="onEdit(tipoServico)">Editar</a>
-                                <a class="btn btn-danger mx-2">Apagar</a>
+                                <a class="btn btn-primary" (click)="onEditing(tipoServico)">Editar</a>
+                                <a class="btn btn-danger mx-2" (click)="onDelete(tipoServico.idEspecialidade)">Apagar</a>
                             </div>
                           </div>
                     </div>
@@ -52,8 +52,8 @@
                 <div class="row" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-6">
-                            <!-- <button class="btn btn-success" *ngIf="prodi" (click)="onSave()">Create</button> -->
-                            <button class="btn btn-success" (click)="onSave()">Salvar</button>
+                            <button class="btn btn-success" (click)="onSave(tipoServicoObj)" *ngIf="!this.editing">Criar</button>
+                            <button class="btn btn-success" (click)="onEdit(tipoServicoObj)" *ngIf="this.editing">Editar</button>
                         </div>
                     </div>
                 </div>

@@ -20,6 +20,8 @@ export class TipoServicoComponent {
 
   titleSideBar = "";
 
+  editing = false;
+
   tipoServicoList: any [] = [];
 
   constructor(private tipoServicoSrv: TipoServicoService) {
@@ -32,7 +34,7 @@ export class TipoServicoComponent {
 
   //getTipoServico() {
   //  this.tipoServicoSrv.getTipoServico(1, 5).subscribe((res:any)=>{
-  //    this.tipoServicoList = res;
+  //    this.tipoServicoList = res.elementos;
   //  })
   //}
 
@@ -42,10 +44,41 @@ export class TipoServicoComponent {
     })
   }
 
-  onSave() {
-    this.tipoServicoSrv.saveTipoServico(this.tipoServicoObj).subscribe((res:any)=>{
+  onSave(item: any) {
+    this.tipoServicoSrv.saveTipoServico(item).subscribe((res:any)=>{
       if(res.resul) {
-        alert("Produto Cadastrado!");
+        alert("Tipo de Serviço Cadastrado!");
+        this.getTipoServico();
+        this.closeSideBar();
+      } else {
+        alert(res.message);
+      }
+    })
+  }
+
+  onEditing(item: any) {
+    this.tipoServicoObj = { ...item};
+    this.titleSideBar = "Editando "+item.nomeEspecialidade;
+    this.editing = true;
+    this.openSideBar();
+  }
+
+  onEdit(item: any) {
+    this.tipoServicoSrv.putTipoServico(item, item.idEspecialidade).subscribe((res:any)=>{
+      if(res.resul) {
+        alert("Tipo de Serviço Editado!");
+        this.getTipoServico();
+        this.closeSideBar();
+      } else {
+        alert(res.message);
+      }
+    })
+  }
+
+  onDelete(item: any) {
+    this.tipoServicoSrv.deleteTipoServico(item).subscribe((res:any)=>{
+      if(res.resul) {
+        alert("Tipo de Serviço Apagado!");
         this.getTipoServico();
       } else {
         alert(res.message);
@@ -53,14 +86,13 @@ export class TipoServicoComponent {
     })
   }
 
-  onEdit(item: any) {
-    this.tipoServicoObj = item;
-    this.titleSideBar = "Editando "+item.nomeEspecialidade;
-    this.openSideBar();
-  }
-
   onCreate() {
     this.titleSideBar = "Criando Novo Serviço";
+
+    this.tipoServicoObj.nomeEspecialidade = "";
+    this.tipoServicoObj.valor = 0;
+    this.editing = false;
+
     this.openSideBar();
   }
 
@@ -70,5 +102,6 @@ export class TipoServicoComponent {
 
   closeSideBar() {
     this.showSideBar = false;
+    this.editing = false;
   }
 }

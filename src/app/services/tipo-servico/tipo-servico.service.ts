@@ -24,4 +24,12 @@ export class TipoServicoService {
   saveTipoServico(obj: any) {
     return this.http.post(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO, obj)
   }
+
+  putTipoServico(obj: any, id: number) {
+    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.TIPO_SERVICO}/${id}`, obj);
+  }
+
+  deleteTipoServico(id: number) {
+    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.TIPO_SERVICO}/${id}`);
+  }
 }
