@@ -8,6 +8,7 @@ import { LayoutWebSiteComponent } from './pages/website/layout-web-site/layout-w
 import { AtendimentoWebSiteComponent } from './pages/website/atendimento-web-site/atendimento-web-site.component';
 import { AgendamentoComponent } from './pages/admin/agendamento/agendamento.component';
 import { AgendamentoWebSiteComponent } from './pages/website/agendamento-web-site/agendamento-web-site.component';
+import { ProdutoComponent } from './pages/admin/produto/produto.component';
 
 export const routes: Routes = [
 
@@ -49,6 +50,10 @@ export const routes: Routes = [
             {
                 path:'agendamento-adm',
                 component:AgendamentoComponent
+            },
+            {
+                path:'produto',
+                component:ProdutoComponent
             }
         ]
     }
