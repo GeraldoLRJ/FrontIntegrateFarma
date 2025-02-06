@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PrestadorServicoService } from '../../../services/prestador-servico/prestador-servico.service';
 import { AgendamentoService } from '../../../services/agendamento/agendamento.service';
-import { UsuarioService } from '../../../services/usuario/usuario.service';
-import { TipoServicoService } from '../../../services/tipo-servico/tipo-servico.service';
 import { ClienteService } from '../../../services/cliente/cliente.service';
 
 @Component({
@@ -87,7 +85,7 @@ export class AgendamentoComponent {
   
     onEditing(item: any) {
       this.agendamentoObj = { ...item};
-      this.titleSideBar = "Editando "+item.nome;
+      this.titleSideBar = "Editando "+item.tratamento;
       this.editing = true;
       this.openSideBar();
     }

@@ -1,1 +1,87 @@
-<p>agendamento-web-site works!</p>
+<div class="row">
+    <div [ngClass]="showSideBar ? 'col-8' : 'col-12'" class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        Lista de Agendamentos
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3" *ngFor="let agendamento of agendamentoList">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">{{agendamento.tratamento}}</h4>
+                                <a class="btn btn-primary" (click)="onEditing(agendamento)">Visualizar</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4" *ngIf="showSideBar">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        {{this.titleSideBar}}
+                    </div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-danger" (click)="closeSideBar()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Prestador de Serviço</label>
+                        <select id="prestador-servico" class="form-control" [(ngModel)]="agendamentoObj.idPrestadorServico" (change)="updateIdPrestadorServico()" [disabled]="true">
+                            <option *ngFor="let item of prestadorServicoList" [value]="item.idPrestadorServico">
+                                {{ item.nome }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Tratamento</label>
+                        <input type="text" [(ngModel)]="agendamentoObj.tratamento" class="form-control" [disabled]="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Exame</label>
+                        <input type="text" [(ngModel)]="agendamentoObj.exame" class="form-control" [disabled]="true">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Data</label>
+                        <input type="datetime-local" id="dataHorario" [(ngModel)]="agendamentoObj.dataHorario" 
+                                class="form-control" [min]="minDate" [disabled]="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Valor Agendamento</label>
+                        <input type="number" [(ngModel)]="agendamentoObj.valorAgendamento" class="form-control" [disabled]="true">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Status</label>
+                        <input type="text" [(ngModel)]="agendamentoObj.status" class="form-control" [disabled]="true">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Cliente</label>
+                        <select id="cliente" class="form-control" [(ngModel)]="agendamentoObj.idCliente" (change)="updateIdCliente()" [disabled]="true">
+                            <option *ngFor="let item of clienteList" [value]="item.idCliente">
+                                {{ item.nome }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
