@@ -62,7 +62,7 @@ export class AgendamentoComponent {
     }
   
     getCliente() {
-      this.clienteSrv.getAgendamento().subscribe((res:any)=>{
+      this.clienteSrv.getCliente().subscribe((res:any)=>{
         this.clienteList = res.elementos;
       })
     }

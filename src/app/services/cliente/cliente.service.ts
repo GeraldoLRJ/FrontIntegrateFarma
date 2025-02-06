@@ -9,7 +9,7 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  getAgendamento() {
-      return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO)
+  getCliente() {
+      return this.http.get(Constant.API_END_POINT + Constant.METHODS.CLIENTE)
     }
 }

@@ -31,36 +31,35 @@
             "idCargo": 1
           }
     ],
-    "cliente": [
+    "cliente": 
         {
-            "totalElementos": 0,
-            "quantidadePaginas": 0,
-            "pagina": 0,
-            "tamanho": 0,
-            "elementos": [
-              {
-                "idCliente": 1,
-                "idUsuario": 2,
-                "cpf": "24242002502",
-                "email": "teste@gmail.com",
-                "nome": "Clara",
-                "nomeCargo": "cliente",
-                "contatos": "211889292891",
-                "numero": 251812966298
-              },
-              {
-                "idCliente": 2,
-                "idUsuario": 1,
-                "cpf": "24242002502",
-                "email": "teste@gmail.com",
-                "nome": "Armando",
-                "nomeCargo": "cliente",
-                "contatos": "211889292891",
-                "numero": 251812966298
-              }
-            ]
-          }
-    ],
+        "totalElementos": 0,
+        "quantidadePaginas": 0,
+        "pagina": 0,
+        "tamanho": 0,
+        "elementos": [
+            {
+            "idCliente": 1,
+            "idUsuario": 2,
+            "cpf": "24242002502",
+            "email": "teste@gmail.com",
+            "nome": "Clara",
+            "nomeCargo": "cliente",
+            "contatos": "211889292891",
+            "numero": 251812966298
+            },
+            {
+            "idCliente": 2,
+            "idUsuario": 1,
+            "cpf": "24242002502",
+            "email": "teste@gmail.com",
+            "nome": "Armando",
+            "nomeCargo": "cliente",
+            "contatos": "211889292891",
+            "numero": 251812966298
+            }
+        ]
+        },
     "paginado-prestador-servico": {
         "totalElementos": 0,
         "quantidadePaginas": 0,
