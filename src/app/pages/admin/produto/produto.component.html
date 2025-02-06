@@ -1,1 +1,73 @@
-<p>produto works!</p>
+<div class="row">
+    <div [ngClass]="showSideBar ? 'col-8' : 'col-12'" class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        Lista de Prestadores de Serviços
+                    </div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-success" (click)="onCreate()">Novo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3" *ngFor="let product of productList">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">{{product.descricao}}</h4>
+                                <a class="btn btn-primary" (click)="onEditing(product)">Editar</a>
+                                <a class="btn btn-danger mx-2" (click)="onDelete(product.id)">Apagar</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4" *ngIf="showSideBar">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <div class="row">
+                    <div class="col-6">
+                        {{this.titleSideBar}}
+                    </div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-danger" (click)="closeSideBar()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Descrição</label>
+                        <input type="text" [(ngModel)]="produtoObj.descricao" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Preço</label>
+                        <input type="number" [(ngModel)]="produtoObj.preco" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Link Imagem</label>
+                        <input type="text" [(ngModel)]="produtoObj.linkImagem" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Quantidade Estoque</label>
+                        <input type="number" [(ngModel)]="produtoObj.quantidadeEstoque" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-success" (click)="onSave(produtoObj)" *ngIf="!this.editing">Criar</button>
+                            <button class="btn btn-success" (click)="onEdit(produtoObj)" *ngIf="this.editing">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

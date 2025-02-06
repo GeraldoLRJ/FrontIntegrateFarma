@@ -14,11 +14,23 @@ export class ProductService {
   //    .set('pagina', pagina.toString())
   //    .set('tamanho', tamanho.toString());
 
-  //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRODUCTS, {params})
+  //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.PRODUCTS, {params})
   //}
 
   getProducts() {
-    return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRODUCTS)
+    return this.http.get(Constant.API_END_POINT + Constant.METHODS.PRODUCTS)
+  }
+
+  saveProducts(obj: any) {
+    return this.http.post(Constant.API_END_POINT + Constant.METHODS.PRODUCTS, obj)
+  }
+
+  putProducts(obj: any, id: number) {
+    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.PRODUCTS}/${id}`, obj);
+  }
+
+  deleteProducts(id: number) {
+    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.PRODUCTS}/${id}`);
   }
 
   finalizarCompra(obj: any) {

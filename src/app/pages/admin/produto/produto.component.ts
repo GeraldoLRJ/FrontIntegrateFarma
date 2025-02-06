@@ -13,16 +13,18 @@ import { FormsModule } from '@angular/forms';
 export class ProdutoComponent {
   showSideBar: boolean = false;
   
-  productList: any = {
-      "nomeEspecialidade": "",
-      "valor": 0
+  produtoObj: any = {
+      "descricao": "",
+      "preco": 0,
+      "linkImagem": "",
+      "quantidadeEstoque": 0
     }
   
     titleSideBar = "";
   
     editing = false;
   
-    tipoServicoList: any [] = [];
+    productList: any [] = [];
   
     constructor(private produtoSrv: ProductService) {
       
@@ -32,10 +34,10 @@ export class ProdutoComponent {
       this.getAllProducts();
     }
   
-  // getAllProducts() {
-    //  this.prodSrv.getProducts(1, 5).subscribe((res:any)=>{
-    //   this.productList = res.elementos;
-    //  })
+   //getAllProducts() {
+  //    this.prodSrv.getProducts(1, 5).subscribe((res:any)=>{
+  //     this.productList = res.elementos;
+   //   })
   // }
   
   getAllProducts() {
@@ -45,52 +47,52 @@ export class ProdutoComponent {
   }
   
     onSave(item: any) {
-      //this.produtoSrv.saveTipoServico(item).subscribe((res:any)=>{
-        //if(res.resul) {
-        //  alert("Tipo de Serviço Cadastrado!");
-        //  this.getTipoServico();
-        //  this.closeSideBar();
-       // } else {
-       //   alert(res.message);
-       // }
-    //  })
+      this.produtoSrv.saveProducts(item).subscribe((res:any)=>{
+        if(res.resul) {
+          alert("Tipo de Serviço Cadastrado!");
+          this.getAllProducts();
+         this.closeSideBar();
+        } else {
+          alert(res.message);
+        }
+      })
     }
   
     onEditing(item: any) {
-      //this.produtoObj = { ...item};
-      this.titleSideBar = "Editando "+item.nomeEspecialidade;
+      this.produtoObj = { ...item};
+      this.titleSideBar = "Editando "+item.descricao;
       this.editing = true;
       this.openSideBar();
     }
   
     onEdit(item: any) {
-      //this.produtoSrv.putTipoServico(item, item.idEspecialidade).subscribe((res:any)=>{
-      //  if(res.resul) {
-        //  alert("Tipo de Serviço Editado!");
-          //this.getTipoServico();
-       //   this.closeSideBar();
-      //  } else {
-       //   alert(res.message);
-      //  }
-     // })
+      this.produtoSrv.putProducts(item, item.id).subscribe((res:any)=>{
+        if(res.resul) {
+          alert("Tipo de Serviço Editado!");
+          this.getAllProducts();
+          this.closeSideBar();
+        } else {
+          alert(res.message);
+        }
+      })
     }
   
     onDelete(item: any) {
-     // this.produtoSrv.deleteTipoServico(item).subscribe((res:any)=>{
-       // if(res.resul) {
-        //  alert("Tipo de Serviço Apagado!");
-         // this.getTipoServico();
-       // } else {
-       //   alert(res.message);
-       // }
-     // })
+      this.produtoSrv.deleteProducts(item).subscribe((res:any)=>{
+        if(res.resul) {
+          alert("Tipo de Serviço Apagado!");
+          this.getAllProducts();
+        } else {
+          alert(res.message);
+        }
+      })
     }
   
     onCreate() {
       this.titleSideBar = "Criando Novo Serviço";
   
-      //this.produtoObj.nomeEspecialidade = "";
-      //this.produtoObj.valor = 0;
+      this.produtoObj.nomeEspecialidade = "";
+      this.produtoObj.valor = 0;
       this.editing = false;
   
       this.openSideBar();
