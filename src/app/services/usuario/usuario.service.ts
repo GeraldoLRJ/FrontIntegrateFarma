@@ -14,6 +14,6 @@ export class UsuarioService {
   //}
 
   getUsuarioAdmin() {
-    return this.http.get(Constant.API_END_POINT + Constant.METHODS.USUARIO_ADMIN)
+    return this.http.get(Constant.API_END_POINT + 'administrativo/listar-administradores')
   }
 }

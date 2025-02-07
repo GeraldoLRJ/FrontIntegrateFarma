@@ -48,12 +48,12 @@ export class ProdutoComponent {
   
     onSave(item: any) {
       this.produtoSrv.saveProducts(item).subscribe((res:any)=>{
-        if(res.resul) {
-          alert("Tipo de Serviço Cadastrado!");
+        if(res) {
+          alert("Produto Cadastrado!");
           this.getAllProducts();
          this.closeSideBar();
         } else {
-          alert(res.message);
+          alert("Produto Falhou!");
         }
       })
     }
@@ -67,29 +67,29 @@ export class ProdutoComponent {
   
     onEdit(item: any) {
       this.produtoSrv.putProducts(item, item.id).subscribe((res:any)=>{
-        if(res.resul) {
-          alert("Tipo de Serviço Editado!");
+        if(res) {
+          alert("Produto Editado!");
           this.getAllProducts();
           this.closeSideBar();
         } else {
-          alert(res.message);
+          alert("Produto Falhou!");
         }
       })
     }
   
     onDelete(item: any) {
       this.produtoSrv.deleteProducts(item).subscribe((res:any)=>{
-        if(res.resul) {
-          alert("Tipo de Serviço Apagado!");
+        if(res) {
+          alert("Produto Apagado!");
           this.getAllProducts();
         } else {
-          alert(res.message);
+          alert("Produto Falhou!");
         }
       })
     }
   
     onCreate() {
-      this.titleSideBar = "Criando Novo Serviço";
+      this.titleSideBar = "Criando Novo Produto";
   
       this.produtoObj.nomeEspecialidade = "";
       this.produtoObj.valor = 0;

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
 
@@ -18,7 +18,11 @@ export class ProductService {
   //}
 
   getProducts() {
-    return this.http.get(Constant.API_END_POINT + Constant.METHODS.PRODUCTS)
+    let params = new HttpParams()
+      .set('pagina', '0')
+      .set('tamanho', '999');
+
+    return this.http.get(Constant.API_END_POINT + 'produto/paginado-produtos/', {params})
   }
 
   saveProducts(obj: any) {
@@ -26,7 +30,7 @@ export class ProductService {
   }
 
   putProducts(obj: any, id: number) {
-    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.PRODUCTS}/${id}`, obj);
+    return this.http.put(`${Constant.API_END_POINT}${Constant.METHODS.PRODUCTS}/${id}`, obj);
   }
 
   deleteProducts(id: number) {

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
 
@@ -19,7 +19,11 @@ export class PrestadorServicoService {
   //}
 
   getPrestadorServico() {
-    return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRESTADOR_SERVICO)
+    let params = new HttpParams()
+      .set('pagina', '0')
+      .set('tamanho', '999');
+
+    return this.http.get(Constant.API_END_POINT + 'administrativo/paginado-prestador-servico/', {params})
   }
   
   savePrestadorServico(obj: any) {

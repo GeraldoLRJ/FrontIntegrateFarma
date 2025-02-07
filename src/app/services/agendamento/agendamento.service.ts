@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
 
@@ -9,17 +9,17 @@ export class AgendamentoService {
 
   constructor(private http: HttpClient) { }
   
-    //getAgendamento(pagina: number, tamanho: number) {
-    //  let params = new HttpParams()
-    //    .set('pagina', pagina.toString())
-    //    .set('tamanho', tamanho.toString());
-  
-    //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO, {params})
-    //}
-  
     getAgendamento() {
-      return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO)
+      let params = new HttpParams()
+        .set('pagina', '0')
+        .set('tamanho', '999');
+  
+      return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO, {params})
     }
+  
+    //getAgendamento() {
+    //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO)
+    //}
     
     saveAgendamento(obj: any) {
       return this.http.post(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO, obj)

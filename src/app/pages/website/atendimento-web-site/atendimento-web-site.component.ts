@@ -31,10 +31,10 @@ export class AtendimentoWebSiteComponent {
 
   postAtendimento(item: any) {
     this.prodSrv.postAtendimento(item).subscribe((res:any)=>{
-      if(res.resul) {
-        alert("Prestador de Serviço Cadastrado!");
+      if(res) {
+        alert("Atendimento Cadastrado!");
       } else {
-        alert(res.message);
+        alert("Atendimento Falhou!");
       }
     })
   }

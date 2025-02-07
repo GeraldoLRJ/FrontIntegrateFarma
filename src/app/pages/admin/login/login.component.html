@@ -26,6 +26,7 @@
                     <i class="fab fa-twitter social-icon"></i>
                 </div>
                 <button type="button" (click)="onLogin()">Login</button>
+                <p *ngIf="errorMessage" style="color: red; text-align: center;">{{ errorMessage }}</p>
             </form>
         </div>
     </div>

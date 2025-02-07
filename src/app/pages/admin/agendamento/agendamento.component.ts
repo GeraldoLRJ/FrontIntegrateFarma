@@ -73,12 +73,12 @@ export class AgendamentoComponent {
   
     onSave(item: any) {
       this.agendamentoServiceSrv.saveAgendamento(item).subscribe((res:any)=>{
-        if(res.resul) {
+        if(res) {
           alert("Agendamento Cadastrado!");
           this.getAgendamento();
           this.closeSideBar();
         } else {
-          alert(res.message);
+          alert("Agendamento Falhou!");
         }
       })
     }
@@ -114,23 +114,23 @@ export class AgendamentoComponent {
   
     onEdit(item: any) {
       this.agendamentoServiceSrv.putAgendamento(item, item.idPrestadorServico).subscribe((res:any)=>{
-        if(res.resul) {
+        if(res) {
           alert("Agendamento Editado!");
           this.getAgendamento();
           this.closeSideBar();
         } else {
-          alert(res.message);
+          alert("Agendamento Falhou!");
         }
       })
     }
   
     onDelete(item: any) {
       this.agendamentoServiceSrv.deleteAgendamento(item).subscribe((res:any)=>{
-        if(res.resul) {
+        if(res) {
           alert("Agendamento Apagado!");
           this.getAgendamento();
         } else {
-          alert(res.message);
+          this.getAgendamento();
         }
       })
     }

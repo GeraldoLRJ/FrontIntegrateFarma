@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/admin/login/login.component';
 import { LayoutComponent } from './pages/admin/layout/layout.component';
 import { TipoServicoComponent } from './pages/admin/tipo-servico/tipo-servico.component';
@@ -11,50 +14,26 @@ import { AgendamentoWebSiteComponent } from './pages/website/agendamento-web-sit
 import { ProdutoComponent } from './pages/admin/produto/produto.component';
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'shop', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
 
     {
-        path:'',
-        redirectTo:'shop',
-        pathMatch:'full'
-    },
-    {
-        path:'login',
-        component:LoginComponent
-    },
-    {
-        path:'',
-        component:LayoutWebSiteComponent,
+        path: '',
+        component: LayoutWebSiteComponent,
         children: [
-            {
-                path:'shop',
-                component:LandingComponent
-            },
-            {
-                path:'agendamento',
-                component:AgendamentoWebSiteComponent
-            },
+            { path: 'shop', component: LandingComponent },
+            { path: 'agendamento', component: AgendamentoWebSiteComponent },
         ]
     },
     {
-        path:'',
-        component:LayoutComponent,
+        path: '',
+        component: LayoutComponent,
+        canActivate: [AuthGuard],
         children: [
-            {
-                path:'tipo_servico',
-                component:TipoServicoComponent
-            },
-            {
-                path:'prestador_servico',
-                component:PrestadorServicoComponent
-            },
-            {
-                path:'agendamento-adm',
-                component:AgendamentoComponent
-            },
-            {
-                path:'produto',
-                component:ProdutoComponent
-            }
+            { path: 'tipo_servico', component: TipoServicoComponent },
+            { path: 'prestador_servico', component: PrestadorServicoComponent },
+            { path: 'agendamento-adm', component: AgendamentoComponent },
+            { path: 'produto', component: ProdutoComponent },
         ]
     }
 ];

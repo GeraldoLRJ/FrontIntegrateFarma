@@ -46,12 +46,12 @@ export class TipoServicoComponent {
 
   onSave(item: any) {
     this.tipoServicoSrv.saveTipoServico(item).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Tipo de Serviço Cadastrado!");
         this.getTipoServico();
         this.closeSideBar();
       } else {
-        alert(res.message);
+        alert("Falha ao cadastrar Tipo de Serviço");
       }
     })
   }
@@ -65,23 +65,23 @@ export class TipoServicoComponent {
 
   onEdit(item: any) {
     this.tipoServicoSrv.putTipoServico(item, item.idEspecialidade).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Tipo de Serviço Editado!");
         this.getTipoServico();
         this.closeSideBar();
       } else {
-        alert(res.message);
+        alert("Tipo de Serviço Falhou!");
       }
     })
   }
 
   onDelete(item: any) {
     this.tipoServicoSrv.deleteTipoServico(item).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Tipo de Serviço Apagado!");
         this.getTipoServico();
       } else {
-        alert(res.message);
+        alert("Tipo de Serviço Falhou!");
       }
     })
   }

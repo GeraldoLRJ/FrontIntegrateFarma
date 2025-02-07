@@ -9,17 +9,17 @@ export class TipoServicoService {
 
   constructor(private http: HttpClient) { }
 
-  //getTipoServico(pagina: number, tamanho: number) {
-  //  let params = new HttpParams()
-  //    .set('pagina', pagina.toString())
-  //    .set('tamanho', tamanho.toString());
-
-  //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO, {params})
-  //}
-
   getTipoServico() {
-    return this.http.get(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO)
+    let params = new HttpParams()
+      .set('pagina', '0')
+      .set('tamanho', '999');
+
+    return this.http.get(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO, {params})
   }
+
+  //getTipoServico() {
+  //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO)
+  //}
   
   saveTipoServico(obj: any) {
     return this.http.post(Constant.API_END_POINT + Constant.METHODS.TIPO_SERVICO, obj)

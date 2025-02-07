@@ -77,12 +77,12 @@ export class PrestadorServicoComponent {
 
   onSave(item: any) {
     this.prestadorServicoSrv.savePrestadorServico(item).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Prestador de Serviço Cadastrado!");
         this.getPrestadorServico();
         this.closeSideBar();
       } else {
-        alert(res.message);
+        alert("Prestador de Serviço Falhou!");
       }
     })
   }
@@ -111,23 +111,23 @@ export class PrestadorServicoComponent {
 
   onEdit(item: any) {
     this.prestadorServicoSrv.putPrestadorServico(item, item.idPrestadorServico).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Prestador de Serviço Editado!");
         this.getPrestadorServico();
         this.closeSideBar();
       } else {
-        alert(res.message);
+        alert("Prestador de Serviço Falhou!");
       }
     })
   }
 
   onDelete(item: any) {
     this.prestadorServicoSrv.deletePrestadorServico(item).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Prestador de Serviço Apagado!");
         this.getPrestadorServico();
       } else {
-        alert(res.message);
+        alert("Prestador de Serviço Falhou!");
       }
     })
   }

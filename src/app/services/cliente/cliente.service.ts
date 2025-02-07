@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
 
@@ -10,6 +10,10 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   getCliente() {
-      return this.http.get(Constant.API_END_POINT + Constant.METHODS.CLIENTE)
+      let params = new HttpParams()
+        .set('pagina', '0')
+        .set('tamanho', '999');
+
+      return this.http.get(Constant.API_END_POINT + 'administrativo/paginado-cliente/', {params})
     }
 }

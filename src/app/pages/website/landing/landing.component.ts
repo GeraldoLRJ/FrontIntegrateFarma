@@ -125,13 +125,13 @@ export class LandingComponent implements OnInit {
     };
 
     this.prodSrv.finalizarCompra(this.response).subscribe((res:any)=>{
-      if(res.resul) {
+      if(res) {
         alert("Compra Realizada!");
         setTimeout(() => {
           location.reload();
         }, 1000);
       } else {
-        alert(res.message);
+        alert('Compra Falhou!');
       }
     })
   }
