@@ -31,7 +31,7 @@ export class PrestadorServicoService {
   }
 
   putPrestadorServico(obj: any, id: number) {
-    return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.PRESTADOR_SERVICO}/${id}`, obj);
+    return this.http.put(`${Constant.API_END_POINT}${Constant.METHODS.PRESTADOR_SERVICO}/${id}`, obj);
   }
 
   deletePrestadorServico(id: number) {

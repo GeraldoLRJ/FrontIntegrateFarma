@@ -23,10 +23,19 @@ export class LoginComponent {
 
   onLogin() {
     this.authService.login({
-      email: this.loginObj.userName, // Ajuste conforme o backend (se necessário)
+      email: this.loginObj.userName,
       senha: this.loginObj.password
     }).subscribe({
-      next: () => this.router.navigateByUrl('/tipo_servico'),
+      next: () => {
+        const decodedToken = this.authService.decodeToken();
+        console.log('Token Decodificado:', decodedToken); 
+
+        if (decodedToken && decodedToken.cargos.includes('ROLE_CLIENTE')) {
+          this.router.navigateByUrl('/shop');
+        } else {
+          this.router.navigateByUrl('/tipo_servico');
+        }
+      },
       error: () => this.errorMessage = 'Credenciais inválidas!'
     });
   }

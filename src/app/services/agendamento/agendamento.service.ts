@@ -26,7 +26,7 @@ export class AgendamentoService {
     }
   
     putAgendamento(obj: any, id: number) {
-      return this.http.delete(`${Constant.API_END_POINT}${Constant.METHODS.AGENDAMENTO}/${id}`, obj);
+      return this.http.put(`${Constant.API_END_POINT}${Constant.METHODS.AGENDAMENTO}/${id}`, obj);
     }
   
     deleteAgendamento(id: number) {
