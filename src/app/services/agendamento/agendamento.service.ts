@@ -16,6 +16,10 @@ export class AgendamentoService {
   
       return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO, {params})
     }
+
+    getAgendamentoCliente() {
+      return this.http.get(Constant.API_END_POINT + 'cliente/agendamentos')
+    }
   
     //getAgendamento() {
     //  return this.http.get(Constant.API_END_POINT + Constant.METHODS.AGENDAMENTO)

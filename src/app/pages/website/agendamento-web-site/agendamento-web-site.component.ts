@@ -54,8 +54,8 @@ export class AgendamentoWebSiteComponent {
     //}
   
     getAgendamento() {
-      this.agendamentoServiceSrv.getAgendamento().subscribe((res:any)=>{
-        this.agendamentoList = res.elementos;
+      this.agendamentoServiceSrv.getAgendamentoCliente().subscribe((res:any)=>{
+        this.agendamentoList = res.agendamentoDTOList;
       })
     }
   
